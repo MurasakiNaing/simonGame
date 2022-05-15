@@ -4,13 +4,15 @@ var userClickedPattern = [];
 var level = 0;
 var started = false;
 
-$(document).keydown((e) => {
-    if(!started) {
-        $("#level-title").text("Level " + level);
-        nextSequence();
-        started = true;
-    }
-})
+if(started === false) {
+    $(document).keydown((e) => {
+        if(!started) {
+            $("#level-title").text("Level " + level);
+            nextSequence();
+            started = true;
+        }
+    })
+}
 
 function nextSequence() {
     userClickedPattern = [];
